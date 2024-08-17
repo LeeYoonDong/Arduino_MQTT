@@ -77,3 +77,78 @@
 - 실제 하드웨어 구성 및 테스트
 - 보안 강화 (SSL/TLS 적용)
 - 데이터 분석 기능 추가
+
+<br/>
+<br/>
+
+# IoT DHT11 Sensor Data Collection and Visualization System
+
+This project implements an IoT system that collects temperature and humidity data from a DHT11 sensor using Arduino Uno and ESP8266, transmits the data via MQTT, and uses Node-RED to visualize the data and store it in a MySQL database.
+
+## Table of Contents
+1. [Overview](#overview)
+2. [Technologies Used](#technologies-used)
+3. [Hardware Setup](#hardware-setup)
+4. [Software Setup](#software-setup)
+5. [Installation](#installation)
+6. [Usage](#usage)
+7. [Project Structure](#project-structure)
+8. [Future Improvements](#future-improvements)
+
+## Overview
+This project implements a basic structure of an IoT system. It collects temperature and humidity data from a DHT11 sensor, transmits it to an MQTT broker via ESP8266, and then uses Node-RED to receive this data for real-time visualization and storage in a MySQL database.
+
+## Technologies Used
+- Arduino Uno
+- ESP8266 Wi-Fi module
+- DHT11 temperature and humidity sensor
+- MQTT (Mosquitto)
+- Node-RED
+- MySQL database
+
+## Hardware Setup
+- Arduino Uno + ESP8266 shield
+- DHT11 sensor (connected to digital pin 7)
+
+## Software Setup
+1. Arduino sketch: Wi-Fi connection and MQTT communication via ESP8266
+2. Node-RED flow: MQTT data reception, visualization, and database storage
+3. MySQL database: Sensor data storage
+
+## Installation
+1. Install Arduino IDE and add ESP8266 board
+2. Install required libraries:
+   - DHT sensor library
+   - ESP8266WiFi
+   - Ticker
+   - AsyncMqttClient
+3. Install Node-RED and add necessary nodes:
+   - node-red-dashboard
+   - node-red-node-mysql
+4. Install and configure MySQL database
+
+## Usage
+1. Upload Arduino sketch:
+   - Modify Wi-Fi and MQTT broker settings
+   - Upload sketch
+2. Import Node-RED flow:
+   - Import provided flows.json file
+   - Modify MQTT broker and MySQL connection settings
+3. Configure MySQL database:
+   - Create 'dht11' database
+   - Create 'temperature' and 'humidity' tables
+4. Run the system:
+   - Connect Arduino and sensor to power
+   - Deploy Node-RED flow
+   - Check data on the dashboard
+
+## Project Structure
+- `arduino_sketch/`: Arduino sketch files
+- `node_red_flows/`: Node-RED flow JSON files
+- `database/`: MySQL database schema and queries
+
+## Future Improvements
+- Actual hardware setup and testing
+- Enhance security (apply SSL/TLS)
+- Add data analysis features
+
